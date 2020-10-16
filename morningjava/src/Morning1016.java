@@ -18,16 +18,6 @@ public class Morning1016{
             System.out.println();
         }
 
-        for(int j = 0; j < 5; j++) {
-            for(int i = 0; i < 5; i++) {
-                regAry[j][i] = cnt++;
-            }
-        }
-
-        for(int i = 0; i < 5; i++) {
-            for(int j = 0; j < 5; j++)
-                System.out.printf("%3d", regAry[j][i]);
-        }
-        System.out.println();
+        
     }
 }
