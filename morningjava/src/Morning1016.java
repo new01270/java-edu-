@@ -1,6 +1,6 @@
 public class Morning1016{
     public static void main(String[] args) {
-        System.out.println("Java Sample");
+        System.out.println("Java Sample Smile");
 
         int[][] regAry = new int[5][5]; 
         int cnt = 1;
