@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch06/pseudo1</title>
+    <style>
+        a:link {
+            background-color: chocolate;
+        }
+
+        a:visited {
+            background-color: antiquewhite;
+        }
+
+        a:active {
+            background-color: chartreuse;
+        }
+
+        a:hover {
+            background-color: violet;
+        }
+
+        a:focus {
+            background-color: rgb(37, 43, 41);
+        }
+
+        td {
+            display: block;
+            background-color: bisque;
+        }
+
+        td:nth-child(3) {
+            background-color: plum;
+        }
+
+        td:nth-of-type(even) {
+            background-color: chartreuse;
+        }
+
+        td:first-child {
+            color: aqua;
+        }
+
+        td:last-child {
+            color: red;
+            font-size: 20px;
+        }
+
+        td:nth-child(2n+1) {
+            background-color: darkslategray;
+        }
+
+        td:nth-last-child(2n) {
+            color: darkorange;
+        }
+
+        tr::before {
+            
+        }
+    </style>
+</head>
+
+<body>
+    <a href="basic.html">Basic</a>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+</body>
+
+</html>

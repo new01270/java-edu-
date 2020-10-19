@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch06/css.text</title>
+
+    <style>
+        p[text] {color:red;}
+        p[text="red"] {color:yellow; background-color: purple;}
+        p[text~="bb"] {color:aqua; background-color: black;}
+        p[text|="a1"] {color:brown; background-color: aliceblue;}
+        p[text^="img"] {color: darkkhaki; background-color: aqua;}
+        p[text$="png"] {color: deeppink; background-color: black;}
+        p[text*="ong"]  {color: azure; background-color: brown;}
+
+    </style>
+</head>
+<body>
+    <h2>Text Selector</h2>
+    <p text="hello">모든텍스트</p>
+    <p text="red">택스트 매칭 속성</p>
+    <p text="aa bb cc">리스트 매칭 속성</p>
+    <p text="a1-a2-a3">범위 텍스트 매칭 속성</p>
+    <p text="img/pic.jpg">텍스트 시작 매칠 속성</p>
+    <p text="img/pic.png">텍스트 끝 매칭 속성</p>
+    <p text="Seongyoung Hong">텍스트 패턴 매칭 속성</p>
+</body>
+</html>

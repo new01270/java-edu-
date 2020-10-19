@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch05/basic.html</title>
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            background: coral;
+            border: 5px dotted black;
+            color:white;
+        }
+
+        div#div1{
+            background-color: mediumorchid;
+            border-color:brown;
+            border-style: solid;
+            border-width: 5px;
+        }
+
+        div.div1 {
+            background-color:darkblue;
+            border-color:rgb(159, 190, 20) ;
+            border-style: solid;
+            border-width: 5px;
+        }
+
+        span {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background-color: darkgray;
+            padding-left: 20px;
+            padding-top: 10px;
+            border: 2px solid red;
+        }
+
+        li {
+            color: chartreuse;
+        }
+
+        ul>li {
+            background-color:cornflowerblue;
+
+        }
+
+        ol>li {
+            background-color: fuchsia;
+        }
+
+        a[href^=https] {
+            color:lightsalmon;
+        }
+    </style>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+
+    <a href="http://www.daum.net">Daum</a>
+    <a href="https://www.naver.com">Naver</a>
+    <a href="https://www.google.co.kr">Google</a>
+    <a>Yahoo</a>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+    <div style="background: aquamarine; width: 100px; height: 100px; border: 10px solid black;">div1</div>
+    <div id="div1">div2</div>
+    <div class="div1">div3</div>
+    <p></p>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+    <span>span6</span>
+    <span>span7</span>
+    <span>span8</span>
+    <span>span9</span>
+    <span>span10</span>
+</body>
+
+</html>

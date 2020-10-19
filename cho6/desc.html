@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch06/desc.html</title>
+    <style>
+        div>ul>li#first {
+
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <ul>
+            <li>
+                <div id="first"></div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Descdent Selector</h2>
+        <ul>
+            후손선택자
+            <li id="first">1</li>
+            <li>2</li>
+            <div>
+                <li>
+                    <h2>후손..</h2>
+                    <ul>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </li>
+            </div>
+        </ul>
+
+    </div>
+    <h2>Descdent Selector</h2>
+    <p>또 다른 요소</p>
+</body>
+
+</html>

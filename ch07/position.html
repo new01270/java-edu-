@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posotion.html</title>
+    <style>
+        * {
+            
+        }
+
+        header {
+            position: static;
+            width: 100%;
+            height: 50px;
+            background-color: pink;
+            
+        }
+
+        nav {
+            position: static;
+            width: 90px;
+            height: 160px;
+            background-color: bisque;
+
+        }
+
+        section {
+            position: absolute;
+            left: 105px;
+            top: 70px;
+            width: 86%;
+            height: 165px;
+            background-image: url(../daum.png);
+            background-image 반복안되는거 뭐지?;
+        }
+
+        footer {
+            position: static;
+            height: 50px;
+            background-color: rgba(255, 99, 71, 0.8);
+        }
+
+        li {
+            display: inline;
+        }
+
+        nav>li {
+            list-style: none;
+        }
+        nav>ul {
+            padding-left: 0px;
+        }
+        nav>ul>li{
+            display:block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <ul>
+                <span><a href="info.html" target="f_a">1.info</a></span>
+                <span><a href="birth.html" target="f_a">2.birth</a></span>
+                <span><a href="hobby.html" target="f_a">3.hobby</a></span>
+            </ul>
+        </header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Intro</li>
+                <li>News</li>
+                <li>Article</li>
+                <li>Aside</li>
+            </ul>
+        </nav>
+        <section>
+            <iframe width="100%" height="100%" name="f_a" src="first_page.html"></iframe>
+        </section>
+        <footer>since 1991</footer>
+    </div>
+</body>
+
+</html>
