@@ -12,13 +12,14 @@ public class Morning1019 {
             System.out.println("score: " + score[i]);
         }
 
-        System.out.println("hap: " + (score[0]+score[1]+score[2]));
+        double hap = score[0]+score[1]+score[2];
+        System.out.println("hap: " + hqp);
 
-        System.out.println("avg: " + ((score[0]+score[1]+score[2])/3));
+        System.out.println("avg: " + hqp/3);
         
         Arrays.sort(score);
         for(double k : score) {
-            System.out.println("asce" + k);
+            System.out.println("asce" + k); // 점수에대한 정렬.
         }
     }
 }

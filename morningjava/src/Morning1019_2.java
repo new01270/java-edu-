@@ -49,7 +49,6 @@ public class Morning1019_2{
         
         Student[] stdArr = {s1, s2, s3};
         Arrays.sort(stdArr);
-
         for(Student student : stdArr){
             System.out.println(student.name + ", " + student.score);
         }
