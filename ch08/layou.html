@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-gap: 10px;
+            background-color: #ffffff;
+            padding: 10px;
+            grid-template-rows: 80px 80px 200px 80px;
+        }
+
+        .grid-item {
+            background-color: rgba(221, 230, 240, 0.8);
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .item1 {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        }
+
+        .item2 {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+        }
+
+        .item3 {
+            grid-column: 1;
+            grid-row: 3;
+            padding: 30px 5px;
+
+        }
+
+        .item4 {
+            grid-column: 2;
+            grid-row: 3;
+            padding: 30px;
+        }
+
+        .item5 {
+            grid-column: 3;
+            grid-row: 3;
+            padding-top: 50%;
+
+        }
+
+        .item6 {
+            grid-column: 1 / span 3;
+            grid-row: 4;
+        }
+
+        li {
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>A Five Items Grid Layout:</h1>
+
+    <div class="grid-container">
+        <div class="grid-item item1">Header</div>
+        <div class="grid-item item2">Navigation Menu</div>
+        <div class="grid-item item3">Menu
+            <p></p>
+            <li>coffee</li>
+            <li>beverage</li>
+            <li>tea</li>
+        </div>
+        <div class="grid-item item4">Main Content
+            <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur voluptate reprehenderit
+                consectetur doloremque est</h6>
+        </div>
+        <div class="grid-item item5">Site <br>
+            <div><a class="na" href="http://www.naver.com">Naver</a></div>
+        </div>
+        <div class="grid-item item6">Footer
+            <img src="/images/pic2.jpg" alt="카페사진">
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
