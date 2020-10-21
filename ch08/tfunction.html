@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tfuction.html</title>
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            background: red;
+            color: yellow;
+            border: 2px solid black;
+            transition: width 3s;
+            transition-delay: 1s;
+        }
+        div:hover { width: 400px;}
+        #div1 {transition-timing-fuction: linear;}
+        #div2 {transition-timing-fuction: ease;}
+        #div3 {transition-timing-fuction: ease-in;}
+        #div4 {transition-timing-fuction: ease-out;}
+        #div5 {transition-timing-fuction: ease-in-out;}
+        #div6 {transition-timing-fuction: cobic-bezier(0.1,0.0,0.1,1.0);}
+    </style>
+</head>
+<body>
+    <div id="div1">linear</div>
+    <div id="div2">ease</div>
+    <div id="div3">ease-in</div>
+    <div id="div4">ease-out</div>
+    <div id="div5">ease=in-out</div>
+    <div id="div6">cubic-bezier</div>
+</body>
+</html>
