@@ -15,7 +15,7 @@
 
 
 
-// #################### 1. 반복문
+// #################### 1. 반복
 // let div1 = document.createElement('div');
 // div1.setAttribute('class', 'v1');
 // let img1 = document.createElement('img');
@@ -77,7 +77,7 @@
 
 
 
-// #################### 2.반복문
+// #################### 2.반복
 // let div = document.createElement('div');
 // div.setAttribute('class', 'row');
 
