@@ -56,23 +56,30 @@ public class Morning1021 {
          members.add(new Member("user2", "2222", "Hwang"));
          members.add(new Member("user3", "3333", "Park"));
 
-        int count = 0;
+
+
+        // int count = 0;
+        // for(int i = 0; i < members.size(); i++) {
+        //     if(members.get(i).getId().equals(args[0])&&members.get(i).getPw().equals(args[1])) {
+        //         System.out.println("Welcome " + members.get(i).getName());
+        //         count++;
+        //     }
+        //     if(count==0) {
+        //         System.out.println("Wrong access!!!!!");
+        //     }
+        // }
+
+
+        boolean isfailed = true;
         for(int i = 0; i < members.size(); i++) {
-            if(members.get(i).getId().equals(args[0])&&members.get(i).getPw().equals(args[1])) {
+            Member mem = members.get(i);
+            if(mem.getId().equals(args[0]) && mem.getPw().equals(args[1])) {
                 System.out.println("Welcome " + members.get(i).getName());
-                count++
-            }
-            if(count==0) {
-                System.out.println("Wrong access!!!!!");
+                isfailed = false;
             }
         }
-
-
-        boolean = true;
-        for(int i = 0; i < members.size(); i++) {
-            if(members.get(i).getId().equals(args[0])&&members.get(i).getPw().equals(args[1])) {
-                System.out.println("Welcome " + members.get(i).getName());
-            }
+        if(isfailed == true) {
+            System.out.println("Login failed. Please, Check Id and Password");
         }
               
     }
