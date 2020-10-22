@@ -56,6 +56,8 @@ for (str of strArr) {
 }
 
 
+
+//반법1.
 let days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
 
 let ul = document.createElement('ul');
@@ -70,3 +72,16 @@ for (day of days) {
     
 }
 console.log(ul);
+
+
+
+//방법2.
+//<ul><li>일요일</li><li월요일/li>...</ul>
+let ulTags = '<ul>';
+for(let i = 0; i < days.length; i++) {
+    ulTags += '<li>' + days[i] + '</li>';
+    
+}
+ulTags +='</ul>';
+console.log(ulTags);
+document.write(ulTags);
