@@ -41,6 +41,7 @@
 
 
 // //4. 숫자 35, 88을 배열의 마지막 위치에 추가.
+// object 추가는 .push({1,2,3});
 // intAry.push(
 //     35,
 //     88
@@ -71,6 +72,8 @@
 // for (let j of strAry) {
 //     console.log(j);
 // }
+
+
 
 // let boolAry = [true, false, true, 'a', 0]; //true 3개(a포함)
 // let times = 0;
@@ -145,3 +148,4 @@ for (let pers of persons) {
 }
 console.log(table);
 show.append(table);
+// document.write(table);
