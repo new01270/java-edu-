@@ -24,3 +24,13 @@ bdy[0].append(divTag); // bdy의 아래에 첨부한다-> bdy[0]은 첫번째 �
 
 
 console.log(bdy);//
+
+
+let per1 = {
+    name: 'Hong',
+    age: 20,
+    hobby: 'reading'
+}
+
+per1.name;
+per1['name'];
