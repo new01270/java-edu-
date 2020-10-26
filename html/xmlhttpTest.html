@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlhttpTest_myhome</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function () {
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                let data = JSON.parse(xhtp.responseText);
+                console.log(data);
+                myfunction(data);
+            }
+        }
+        xhtp.open('get', 'MOCK_DATA.json');
+        xhtp.send();
+
+        let myfunction = function (data) {
+            let arr = ['id', 'first_name', 'last_name', 'gender', 'email'];
+
+            let table = document.createElement('table');
+            table.border = '1';
+            let tr = document.createElement('tr');
+            for(a of arr) {
+                let th = document.createElement('th');
+                tr.append(th);
+                text = document.createTextNode(a);
+                th.append(text);                
+            }
+            table.append(tr);
+            for (d of data) {
+                let tr = document.createElement('tr');
+                tr.setAttribute('id',d.id);
+                for (a of arr) {
+                    for (field in d) {
+                        if (a == field) {
+                            
+                            text = document.createTextNode(d[field]);
+                            let td = document.createElement('td');
+                            td.append(text);
+                            tr.append(td);
+                        }
+                    }
+                    table.append(tr);
+                }
+                let show = document.getElementById('show');
+                show.append(table);
+                console.log(table);
+            }
+        }
+    </script>
+</body>
+
+</html>
