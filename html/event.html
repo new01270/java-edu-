@@ -73,7 +73,7 @@
             text = document.createTextNode('Del');
             button.onclick = function () {
                 console.log(this.parentNode.previousSibling.previousSibling.childNodes[0]
-                    .nodeValue); //button의 td 위 td td
+                    .nodeValue); //button의 td 위 td td 나이
                 this.parentNode.parentNode.remove();
 
             }
@@ -94,11 +94,11 @@
 
 
         function myMouseOverFunc() {
-
+            this.style.background = 'pink';
         }
 
         function myMouseOutFunc() {
-
+            this.style.background = null;
         }
     </script>
 </body>

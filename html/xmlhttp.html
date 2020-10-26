@@ -85,17 +85,12 @@
                     if (i == 0) {
                         trTag.setAttribute('id', d[arr[i]]);
                     }
-
                     let tdTag = document.createElement('td');
                     trTag.append(tdTag);
                     let text = document.createTextNode(d[arr[i]]);
                     tdTag.append(text);
-
-
-
                     tTag.append(trTag);
                 }
-
             }
             console.log(tTag);
             show.append(tTag);
