@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/xmlhttp.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        // Ajax : 비동기처리방식
+        // console.log('first');
+        let xhtp = new XMLHttpRequest(); //인스턴스 생성.
+        xhtp.onreadystatechange = function () {
+            // console.log(xhtp.readyState, xhtp.status, xhtp.responseText);
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                // console.log('second');
+                let data = JSON.parse(xhtp.responseText);
+                console.log(data); //json 데이터 불러오기
+
+                myfunction(data);
+
+                // for (let i = 0; i < data.length; i++) {
+                //     console.log(data[i].id, data[i].first_name, data[i].last_name);
+                // }
+            }
+        }
+        xhtp.open('get', 'MOCK_DATA.json');
+        xhtp.send();
+        //https://www.w3schools.com/js/js_ajax_http_response.asp
+
+        // console.log('last'); //first->last->second 순으로 돌아감.
+
+
+        let myfunction = function (data) {
+            // console.log(data);
+            // let show = document.getElementById('show');
+            // let table = document.createElement('table');
+            // table.border = '1';
+            // let tr, th, td;
+
+            // tr = document.createElement('tr');
+            // tr.id = 'data[id]';
+            // for (field in data[0]) {
+            //     th = document.createElement('th');
+            //     tr.append(th);
+            //     text = document.createTextNode(field);
+            //     th.append(text);
+            // }
+            // table.append(tr);
+            // for (d of data) {
+            //     tr = document.createElement('tr');
+
+
+            //     for (field in d) {
+            //         td = document.createElement('td');
+            //         text = document.createTextNode(d[field]);
+            //         td.append(text);
+            //         tr.append(td);
+            //     }
+            //     table.append(tr);
+            // }
+            // show.append(table);
+            // console.log(table);
+
+
+            let arr = ['id', 'first_name', 'last_name', 'gender', 'email'];
+            let show = document.getElementById('show');
+            let tTag = document.createElement('table');
+            tTag.border = '5';
+
+            for (let i = 0; i < arr.length; i++) {
+                let thTag = document.createElement('th');
+                let text = document.createTextNode(arr[i]);
+                thTag.append(text);
+                tTag.append(thTag);
+            }
+
+            for (d of data) {
+
+                let trTag = document.createElement('tr');
+                for (let i = 0; i < arr.length; i++) {
+                    if (i == 0) {
+                        trTag.setAttribute('id', d[arr[i]]);
+                    }
+
+                    let tdTag = document.createElement('td');
+                    trTag.append(tdTag);
+                    let text = document.createTextNode(d[arr[i]]);
+                    tdTag.append(text);
+
+
+
+                    tTag.append(trTag);
+                }
+
+            }
+            console.log(tTag);
+            show.append(tTag);
+        }
+    </script>
+</body>
+
+</html>
