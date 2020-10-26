@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="name" value="Hong"><br>
+    <input type="text" name="age" value="15"><br>
+    <input type="text" name="job" value="학생"><br>
+    <button id='btn'>추가입력</button>
+    <div style="height: 10px;"></div>
+
+    <table id="tbl" border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>직업</th>
+            <th>기능</th>
+        </tr>
+
+    </table>
+    <script>
+        let btn = document.getElementById('btn');
+        // btn.onclick = function () { } //아래 다른방법사용.
+
+        btn.addEventListener('click', myCallBackFunc);
+        btn.addEventListener('mouseover', myMouseOverFunc);
+        btn.addEventListener('mouseout', myMouseOutFunc);
+
+        function myCallBackFunc() {
+            let inputs = document.getElementsByTagName('input');
+            let name = inputs[0].value;
+            let age = inputs[1].value;
+            let job = inputs[2].value;
+
+            if (name == null || name == '') {
+                window.alert('이름을 입력하세요.');
+                return;
+            }
+            if (!age) {
+                window.alert('나이를 입력하세요.');
+                return;
+            }
+            if (!job) {
+                window.alert('직업을 입력하세요.');
+                return;
+            }
+
+
+            let tr = document.createElement('tr');
+            //name collum
+            let td = document.createElement('td');
+            let text = document.createTextNode(name);
+            td.append(text);
+            tr.append(td);
+            //age collum
+            td = document.createElement('td');
+            text = document.createTextNode(age);
+            td.append(text);
+            tr.append(td);
+            //job collum
+            td = document.createElement('td');
+            text = document.createTextNode(job);
+            td.append(text);
+            tr.append(td);
+            //button collum
+            let button = document.createElement('button');
+            td = document.createElement('td');
+            text = document.createTextNode('Del');
+            button.onclick = function () {
+                console.log(this.parentNode.previousSibling.previousSibling.childNodes[0]
+                    .nodeValue); //button의 td 위 td td
+                this.parentNode.parentNode.remove();
+
+            }
+
+            button.append(text);
+            td.append(button);
+            tr.append(td);
+
+
+            let tbl = document.getElementById('tbl');
+            tbl.append(tr);
+
+            inputs[0].value = "";
+            inputs[1].value = "";
+            inputs[2].value = "";
+            inputs[0].focus();
+        }
+
+
+        function myMouseOverFunc() {
+
+        }
+
+        function myMouseOutFunc() {
+
+        }
+    </script>
+</body>
+
+</html>

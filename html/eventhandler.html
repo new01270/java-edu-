@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/eventhandler.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let person1 = {
+            name: 'Hong',
+            age: 20,
+            id: 'user1',
+            url: 'https://www.daum.net'
+        }
+        let person2 = {
+            name: 'Choi',
+            age: 30,
+            id: 'user2',
+            url: 'https://www.naver.com'
+        }
+        let person3 = {
+            name: 'Park',
+            age: 40,
+            id: 'user3',
+            url: 'https://www.google.com'
+        }
+        let members = [person1, person2, person3];
+
+        let table, tr, td, text;
+
+        table = document.createElement('table');
+        table.border = '1';
+        tr = document.createElement('tr');
+        for (field in members[0]) {
+            let th = document.createElement('th');
+            tr.append(th);
+            text = document.createTextNode(field);
+            th.append(text);
+        }
+        table.append(tr);
+        for (mem of members) { //of::자리를 가져오고
+            tr = document.createElement('tr');
+            let url;
+            for (field in mem) { //in::값을 가져오고
+                // console.log(field);
+                // console.log(mem[field]);
+                td = document.createElement('td');
+                text = document.createTextNode(mem[field]);
+                if (field == 'url') {
+                    let aTag = document.createElement('a');
+                    aTag.href = mem[field];
+                    aTag.append(text);
+                    td.append(aTag);
+                    url = mem[field];
+                } else {
+                    td.append(text);
+                }
+                tr.append(td);
+            }
+            let btn = document.createElement('button');
+            btn.innerHTML = '링크';
+            btn.onclick = function () {
+                location.href = url;
+            }
+            td = document.createElement('td');
+            td.append(btn);
+            tr.append(td);
+            table.append(tr);
+        }
+        let show = document.getElementById('show');
+        show.append(table);
+    </script>
+</body>
+
+</html>

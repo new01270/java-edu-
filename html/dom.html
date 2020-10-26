@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Tutorial</title>
+</head>
+
+<body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+
+    <script>
+        console.log(document.childNodes[0]); //doc HTML
+        console.log(document.childNodes[1]); // html
+
+        console.log(document.head.childNodes);  //text, title, text
+        console.log(document.head.childNodes[0]);   //text
+        console.log(document.head.children);    //HTML Collection[title]
+
+
+
+        console.log(document.body.childNodes); //요소들 보기.
+        console.log(document.body.childNodes[0]); //text
+        console.log(document.body.childNodes[1]); //h1
+        console.log(document.body.childNodes[1].childNodes); //text
+        console.log(document.body.childNodes[1].childNodes[0].nodeValue = 'DOM Lesson two');
+        console.log(document.body.childNodes[3].childNodes[0]); //helloworld
+        console.log(document.body.childNodes[3].childNodes[0].nodeValue = 'Good Nice!'); //helloworld변경
+
+        console.log(document.body.children);    //h1,p,script
+        console.log(document.body.children[0]);    //h1
+        console.log(document.body.children[1]);    //p
+        console.log(document.body.children[2]);    //script
+        
+
+
+        
+
+        let div = document.createElement('div');
+        div.className = 'row';
+        div.setAttribute('id', 'row');
+        let text = document.createTextNode('Hello, World');
+        div.append(text);
+        console.log(div);
+
+        // let $body = document.getElementsByTagName('body');
+        // $body[0].append(div);    //
+
+        // let $body = document.getElementsByTagName('p');
+        // $body[0].after(div);    //p태그 후
+        // $body[0].before(div);    //p태그 전
+
+        let person = {
+            이름: '홍길동',
+            나이: 18,
+            직업: '학생'
+        }
+
+        let table = document.createElement('table');
+        table.setAttribute('border', '1px');
+        let tr = document.createElement('tr');
+
+        for (per in person) {
+            let td = document.createElement('td');
+            let text = document.createTextNode(per);    //per: person의field를 담음.->name age job
+            td.append(text);
+            tr.append(td);
+        }
+        table.append(tr);
+
+        let tr2 = document.createElement('tr');
+
+        for (per in person) {
+            let td = document.createElement('td');
+            let text = document.createTextNode(person[per]);    //person[per]: person의field를 담은 per의 field.
+            td.append(text);
+            tr2.append(td);
+        }
+        table.append(tr2);
+
+        let p = document.getElementsByTagName('p');
+        p[0].after(table);
+
+
+
+
+
+
+
+        // let table = document.createElement('table');
+        // table.setAttribute('border','1px');
+        // let tr = document.createElement('tr');
+        // let td1 = document.createElement('td');
+        // let td2 = document.createElement('td');
+        // let td3 = document.createElement('td');
+        // let text1 = document.createTextNode('이름');
+        // let text2 = document.createTextNode('나이');
+        // let text3 = document.createTextNode('직업');
+        // table.append(tr);
+        // tr.append(td1, td2, td3);
+        // td1.append(text1);
+        // td2.append(text2);
+        // td3.append(text3);
+
+        // console.log(table);
+
+        // let tr2 = document.createElement('tr');
+        // let td4 = document.createElement('td');
+        // let td5 = document.createElement('td');
+        // let td6 = document.createElement('td');
+        // let text4 = document.createTextNode('Hong');
+        // let text5 = document.createTextNode('15');
+        // let text6 = document.createTextNode('학생');
+        // table.append(tr2);
+        // tr2.append(td4, td5, td6);
+        // td4.append(text4);
+        // td5.append(text5);
+        // td6.append(text6);
+        // console.log(table);
+
+        // let p = document.getElementsByTagName('p');
+        // p[0].after(table);
+
+
+
+
+
+
+
+        //##세가지방법
+        /*
+        let table2 = document.createElement('table');
+        table2.border = '1';
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        text = document.createTextNode('이름');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('나이');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('직업');
+        td.append(text);
+        tr.append(td);
+        table2.append(tr);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        text = document.createTextNode('홍길동');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('16');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('학생');
+        td.append(text);
+        tr.append(td);
+        table2.append(tr);
+        document.querySelector('body').append(table2);
+
+        let tableData = [['이름','나이','직업'],['곽승호','31','백수']]
+        let table = document.createElement('table');
+        table.border = '1';
+        for(let i=0; i < tableData.length; i++){
+            let tr = document.createElement('tr');
+            for(let j=0; j<tableData[i].length; j++){
+                let td = document.createElement('td');
+                text = document.createTextNode(tableData[i][j]);        
+                td.append(text);
+                tr.append(td);
+            }    
+            table.append(tr);
+        }
+        document.querySelector('body').append(table);
+        
+        let person = {
+            이름 : '곽승민',
+            나이 : "19",
+            직업 : "고3"
+        }
+
+        // console.log(person.length);
+        // for(a in person){
+        //     console.log(a);
+        //     console.log(person[a]);
+        // }
+
+        let table3 = document.createElement('table');
+        table3.border = '1';
+        let tr3 = document.createElement('tr');
+        for(p in person){
+            let td = document.createElement('td');
+            text = document.createTextNode(p);        
+            td.append(text);
+            tr3.append(td);
+        }    
+        table3.append(tr3);
+        tr3 = document.createElement('tr');
+        for(p in person){
+            let td = document.createElement('td');
+            text = document.createTextNode(person[p]);        
+            td.append(text);
+            tr3.append(td);
+        }    
+        table3.append(tr3);
+        document.querySelector('body').append(table3);
+        */
+    </script>
+</body>
+
+</html>
