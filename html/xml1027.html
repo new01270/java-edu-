@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml1027.html/dataset.xml</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+
+        xhtp.onreadystatechange = function () {
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                let data = (xhtp.responseXML);
+
+                // data = data.getElementsByTagName('id'); //id만 들고옴.
+                // console.log(data);
+                // for (let i = 0; i < data.length; i++) {
+                //     console.log(data[i].innerHTML);
+                // }
+
+                // data = data.getElementsByTagName('record');  //모두 들고옴.
+                // for(let i = 0; i < data.length; i++) {
+                //     for(let j = 0; j < data[i].children.length; j++) {
+                //         console.log(data[i].children[j].innerHTML);
+                //     }
+                // }
+
+                // console.log(data[0].children[0]);   // data[0]의 id-> <id>1</id>
+                // console.log('id:' + data[0].children[0].firstChild.nodeValue);   // data[0]의 id값만 출력.-> 1
+                // console.log('fN:' + data[0].children[1].firstChild.nodeValue);   // firstname
+                // console.log('lN:' + data[0].children[2].firstChild.nodeValue);   // lastname
+                // console.log('lN:' + data[0].children[2].innerHTML);   // lastname
+
+                loadXml(data);
+
+            }
+        }
+        xhtp.open('get', 'dataset.xml');
+        xhtp.send();
+
+        let loadXml = function (data) {
+            data = data.getElementsByTagName('record'); //모두 들고옴.
+            // for (let i = 0; i < data.length; i++) {
+            //     for (let j = 0; j < data[i].children.length; j++) {
+            //         console.log(data[i].children[j].innerHTML);
+            //     }
+            // }
+
+
+            let arr = ['id', 'first_name', 'last_name', 'email', 'gender'];
+
+            let show = document.getElementById('show');
+            let table = document.createElement('table');
+            table.border = '10';
+            let tr = document.createElement('tr');
+            for (a of arr) {
+                let th = document.createElement('th');
+                let text = document.createTextNode(a);
+                th.append(text);
+                tr.append(th);
+            }
+            table.append(tr);
+
+            for (let i = 0; i < data.length; i++) {
+                tr = document.createElement('tr');
+                for (a of arr) {
+                    for (let j = 0; j < data[i].children.length; j++) {
+                        if (a == data[i].children[j].tagName) {
+                            let td = document.createElement('td');
+                            let text = document.createTextNode(data[i].children[j].innerHTML);
+                            td.append(text);
+                            tr.append(td);
+                        }
+                    }
+                    table.append(tr);
+                    show.append(table);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

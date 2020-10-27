@@ -11,18 +11,18 @@
     <div id="show"></div>
     <script>
         let xhtp = new XMLHttpRequest();    
-        //웹 서버와 데이터를 교환하는 데 사용.전체 페이지를 다시로드하지 않고도 웹 페이지의 일부를 업데이트 할 수 있음을 의미.
+        
         xhtp.onreadystatechange = function () {
             if (xhtp.readyState == 4 && xhtp.status == 200) {
                 let data = JSON.parse(xhtp.responseText);
                 console.log(data);
-                myfunction(data);
+                loadJson(data);
             }
         }
         xhtp.open('get', 'MOCK_DATA.json');
         xhtp.send();
 
-        let myfunction = function (data) {
+        let loadJson = function (data) {
             let arr = ['id', 'first_name', 'last_name', 'gender', 'email'];
 
             let table = document.createElement('table');
@@ -42,7 +42,6 @@
                 for (a of arr) {
                     for (field in d) {
                         if (a == field) {
-                            
                             text = document.createTextNode(d[field]);
                             let td = document.createElement('td');
                             td.append(text);

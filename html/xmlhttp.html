@@ -12,15 +12,16 @@
     <script>
         // Ajax : 비동기처리방식
         // console.log('first');
+
         let xhtp = new XMLHttpRequest(); //인스턴스 생성.
+        //웹 서버와 데이터를 교환하는 데 사용.전체 페이지를 다시로드하지 않고도 웹 페이지의 일부를 업데이트 할 수 있음을 의미.
         xhtp.onreadystatechange = function () {
             // console.log(xhtp.readyState, xhtp.status, xhtp.responseText);
             if (xhtp.readyState == 4 && xhtp.status == 200) {
                 // console.log('second');
-                let data = JSON.parse(xhtp.responseText);
+                let data = JSON.parse(xhtp.responseText); //xhtp의 결과값->js의 object 값
                 console.log(data); //json 데이터 불러오기
-
-                myfunction(data);
+                loadJson(data);
 
                 for (let i = 0; i < data.length; i++) {
                     console.log(data[i].id, data[i].first_name, data[i].last_name);
@@ -34,7 +35,7 @@
         // console.log('last'); //first->last->second 순으로 돌아감.
 
 
-        let myfunction = function (data) {
+        function loadJson(data) {
             // console.log(data);
             // let show = document.getElementById('show');
             // let table = document.createElement('table');
@@ -95,6 +96,7 @@
             console.log(tTag);
             show.append(tTag);
         }
+
     </script>
 </body>
 
