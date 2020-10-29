@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test/exam05.html</title>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <div id="div"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+
+        xhtp.onreadystatechange = function () {
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                let data = JSON.parse(xhtp.responseText);
+                console.log(data);
+                returnJason(data);
+            }
+        }
+        xhtp.open('get', 'mockaroo.json');
+        xhtp.send();
+
+        let returnJason = function (data) {
+            let table = document.createElement('table');
+            table.border = '1';            
+
+            for (d of data) {
+                let tr = document.createElement('tr');
+                
+                for (field in d) {
+                    let text = document.createTextNode(d[field]);
+                    let td = document.createElement('td');
+                    td.append(text);
+                    tr.append(td);
+                }
+                table.append(tr);
+                let div = document.getElementById('div');
+                div.append(table);
+            }
+        }
+    </script>
+</body>
+
+</html>
